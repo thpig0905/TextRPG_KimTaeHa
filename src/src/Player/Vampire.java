@@ -59,7 +59,7 @@ public class Vampire extends Player implements BloodSucking {
         int recover = getMagicAttack();
         if (getHP() + recover >= getMAX_HP()) {
             System.out.printf("%s가 %d의 체력을 회복합니다.\n", getName(), getMAX_HP() - getHP());
-            setHP(getMAX_HP());
+            setHP(getMAX_HP() + recover);
         } else {
             System.out.println(getName() + "가 " + recover + "의 체력을 회복합니다.");
             setHP(getHP() + recover);

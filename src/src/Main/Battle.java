@@ -19,6 +19,7 @@ public class Battle implements GameCommand {
         int max = playerDAO.printSkillList();
 
         while (true){
+            System.out.println("============================================");
             int sel = Util.getInteger("스킬 선택", 1, max);
             playerDAO.battle(sel);
             if (controller.getMonster().getHP() == 0) {
@@ -26,7 +27,7 @@ public class Battle implements GameCommand {
                 controller.setNextWindow("GameMain");
                 break;
             }
-
+            System.out.println("============================================");
             monsterDAO.battle();
             if (controller.getPlayer().getHP() == 0) {
                 controller.setStage(controller.getStage() - 1);

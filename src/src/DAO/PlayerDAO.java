@@ -25,6 +25,11 @@ public class PlayerDAO {
         int exp = player.getExp() - player.getMAX_EXP();
         player = new Player(player.getName(), level);
         player.setExp(exp);
+        player.setMAX_HP(level * 450);
+        player.setMAX_MP(0);
+        player.setAttack(level * 10);
+        player.setMagicAttack(player.getMAX_HP() / 10 + 5 * level);
+        player.setDefense(level * 15);
         return player;
     }
 
